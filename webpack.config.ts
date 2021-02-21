@@ -2,7 +2,7 @@
  * @Date: 2021-02-21 19:23:35
  * @LastEditors: lisonge
  * @Author: lisonge
- * @LastEditTime: 2021-02-21 19:24:37
+ * @LastEditTime: 2021-02-21 23:27:33
  */
 
 import path from 'path';
@@ -23,7 +23,7 @@ export default {
       },
     ],
   },
-  // ignoreWarnings: [/(Critical dependency)/],
+  ignoreWarnings: [/(Critical dependency)/],
   resolve: {
     extensions: ['.js', '.mjs', '.cjs', '.json', '.ts'],
   },
