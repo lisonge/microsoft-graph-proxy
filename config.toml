@@ -1,6 +1,12 @@
+author = "https://github.com/lisonge"
+[aliyun]
 accessKey_id = ""
 accessKey_secret = ""
 account_id = ""
+auth_file_name = "Microsoft-Graph-Auth.json"
+bucket = ""
+region = "cn-hongkong"
+[microsoft]
 allow_route_list = [
   "/v1.0/me/drive",
   "/v1.0/me/drive/root/children",
@@ -11,10 +17,6 @@ allow_route_list = [
   "/v1.0/drives/{}/items/{}/children",
   "/v1.0/drives/{}/root:/{}:/children",
 ]
-auth_file_name = "Microsoft-Graph-Auth.json"
-author = "https://github.com/lisonge"
-bucket = ""
 client_id = ""
 client_secret = ""
 redirect_uri = ""
-region = "cn-hongkong"

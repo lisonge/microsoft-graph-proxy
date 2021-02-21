@@ -2,12 +2,12 @@
  * @Date: 2021-02-21 22:22:04
  * @LastEditors: lisonge
  * @Author: lisonge
- * @LastEditTime: 2021-02-21 22:28:38
+ * @LastEditTime: 2021-02-22 00:03:42
  */
 
 import OSS from 'ali-oss';
-import { config } from './config';
-const { accessKey_id, accessKey_secret, bucket, region } = config;
+import { aliyun } from './config';
+const { accessKey_id, accessKey_secret, bucket, region } = aliyun;
 
 const client = new OSS({
   region: `oss-${region}`,

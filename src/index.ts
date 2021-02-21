@@ -2,12 +2,12 @@
  * @Date: 2021-02-21 19:14:45
  * @LastEditors: lisonge
  * @Author: lisonge
- * @LastEditTime: 2021-02-21 23:07:24
+ * @LastEditTime: 2021-02-22 00:02:57
  */
 // exnext
 import 'core-js';
 // exnext
-import { config } from './config';
+import { microsoft } from './config';
 import { BaseError } from './error';
 import { matchRoute } from './route';
 import { aliyunReq2nodeReq, nodeResp2aliyunResp } from './util';
@@ -22,7 +22,7 @@ export const handler = async (
 ) => {
   try {
     const { path } = aliyunReq;
-    if (!matchRoute(path, ...config.allow_route_list)) {
+    if (!matchRoute(path, ...microsoft.allow_route_list)) {
       throw BaseError.from('invalid path', 403);
     }
     const req = await aliyunReq2nodeReq(aliyunReq);

@@ -2,11 +2,11 @@
  * @Date: 2021-02-21 20:06:35
  * @LastEditors: lisonge
  * @Author: lisonge
- * @LastEditTime: 2021-02-21 22:58:12
+ * @LastEditTime: 2021-02-22 00:02:28
  */
 
 import { BaseError } from './error';
-import { config } from './config';
+import { aliyun, microsoft } from './config';
 import fetch from 'node-fetch';
 import { URLSearchParams } from 'url';
 import { readText, writeText } from './aliyun_oss';
@@ -25,11 +25,11 @@ export async function getAuthorization(): Promise<string> {
 }
 
 async function readAuth(): Promise<Auth> {
-  return JSON.parse(await readText(config.auth_file_name)) as Auth;
+  return JSON.parse(await readText(aliyun.auth_file_name)) as Auth;
 }
 
 async function writeAuth(auth: Auth) {
-  await writeText(config.auth_file_name, JSON.stringify(auth));
+  await writeText(aliyun.auth_file_name, JSON.stringify(auth));
 }
 
 export async function requestNewAuth() {
@@ -37,7 +37,7 @@ export async function requestNewAuth() {
     throw BaseError.from('auth: expect <auth>, got <undefined>', 500);
   }
   const u = 'https://login.microsoftonline.com/common/oauth2/v2.0/token';
-  const { client_id, redirect_uri, client_secret } = config;
+  const { client_id, redirect_uri, client_secret } = microsoft;
   const data = {
     client_id,
     redirect_uri,
